@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Mood-Journal.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <!-- Sidebar Input Form -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-icon">🎭</span>
+                <h2>Mood<span>Journal</span></h2>
+            </div>
+
+            <form id="moodForm" class="form-card" onsubmit="event.preventDefault();">
+                <h3 id="formTitle">Log Today's Mood</h3>
+                
+                <div class="input-group">
+                    <label>Select Rating (1 to 5):</label>
+                    <div class="rating-buttons" id="ratingContainer">
+                        <button type="button" class="rate-btn" data-value="1">1 😢</button>
+                        <button type="button" class="rate-btn" data-value="2">2 😕</button>
+                        <button type="button" class="rate-btn active" data-value="3">3 😐</button>
+                        <button type="button" class="rate-btn" data-value="4">4 🙂</button>
+                        <button type="button" class="rate-btn" data-value="5">5 😄</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="noteInput">Reflection / Note (Optional):</label>
+                    <textarea id="noteInput" rows="4" placeholder="How was your day? What's on your mind?"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="saveBtn" class="btn-primary">
+                        <span id="saveBtnText">Save Entry</span>
+                    </button>
+                    <button type="button" id="cancelBtn" class="btn-secondary hidden">Cancel</button>
+                </div>
+            </form>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="filter-group">
+                    <span class="filter-label">Filter:</span>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="good">Good (4-5)</button>
+                    <button class="filter-btn" data-filter="neutral">Neutral (3)</button>
+                    <button class="filter-btn" data-filter="low">Low (1-2)</button>
+                </div>
+                <div class="stats-badge">
+                    <span id="countBadge">0</span> Entries
+                </div>
+            </header>
+
+            <div id="journalList" class="entries-list"></div>
+        </main>
+    </div>
+
+    <script src="Mood-Journal.js"></script>
+</body>
+</html>
