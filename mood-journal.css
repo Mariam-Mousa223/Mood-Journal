@@ -47,7 +47,7 @@ body {
 }
 
 .brand span {
-    color: #10b981; /* لون زمردي مميز لدفتر المزاج */
+    color: #10b981; 
 }
 
 .form-card {
@@ -149,7 +149,6 @@ button {
 
 .hidden { display: none; }
 
-/* Main Area */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -201,8 +200,7 @@ button {
     color: #10b981;
     font-weight: 700;
 }
-
-/* Entries Grid - تحويل القائمة لشبكة كروت مريحة على التابلت */
+ 
 .entries-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -281,39 +279,63 @@ button {
     text-align: center;
 }
 
-/* زيادة ارتفاع النموذج طولياً */
 .form-card {
     padding-top: 32px;
     padding-bottom: 32px;
-    gap: 24px; /* توسيع المسافات الرأسية بين العناصر */
+    gap: 24px; 
 }
 
 textarea {
-    min-height: 220px; /* زيادة طول مربع النص بشكل ملحوظ */
+    min-height: 220px; 
     padding: 16px;
     font-size: 15px;
 }
 
-/* تكبير عناصر النموذج الداخلي */
 .form-card {
-    padding: 26px; /* زيادة الهوامش الداخلية */
+    padding: 26px; 
 }
 
 .rate-btn {
-    padding: 14px 0; /* تكبير أزرار الأرقام */
+    padding: 14px 0; 
     font-size: 14px;
 }
 
 textarea {
-    min-height: 140px; /* زيادة ارتفاع مربع النص للكتابة براحة */
+    min-height: 140px; 
     font-size: 15px;
     padding: 14px;
 }
 
 .btn-primary {
     padding: 14px;
-    font-size: 16px; /* تكبير زر Save */
+    font-size: 16px; 
 }
 
 .btn-edit { background: rgba(234, 179, 8, 0.15); color: #facc15; }
 .btn-delete { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 0px;
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 600;
+    
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+.back-link::before {
+  content: "← "; 
+  margin-right: 6px; 
+  display: inline-block;
+  transition: transform 0.2s ease; 
+}
+
+
+.back-link:hover::before {
+  transform: translateX(-4px); 
+}
+
